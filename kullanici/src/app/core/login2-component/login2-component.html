@@ -1,0 +1,34 @@
+<form [formGroup]="form">
+    <div class="form">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" formControlName="email"
+                [class.is-invalid]="form.get('email')?.touched && !form.get('email')?.valid" class="form-control"
+                id="email">
+            @if(form.get('email')?.touched && !form.get('email')?.valid) {
+            <div>
+                @if(form.get('email')?.errors?.['required']) {
+                <small class="text-danger">Boş geçilemez</small>
+                }
+                @if(form.get('email')?.errors?.['minlength']) {
+                <small class="text-danger">En az 3 karakter olmalıdır</small>
+                }
+            </div>
+            }
+        </div>
+        <div class="mb-3">
+            <label for="sifre" class="form-label">Password</label>
+            <input type="text" formControlName="pass"
+                [class.is-invalid]="form.get('pass')?.touched && !form.get('pass')?.valid" class="form-control"
+                id="sifre">
+            @if(form.get('pass')?.touched && !form.get('pass')?.valid) {
+            <div>
+                <small class="text-danger">{{form.get('pass')?.errors?.['hata']}}</small>
+            </div>
+            }
+        </div>
+        <div>
+            <button [disabled]="!form.valid" (click)="login()" class="btn btn-primary">Login</button>
+        </div>
+    </div>
+</form>

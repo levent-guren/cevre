@@ -1,0 +1,28 @@
+<div [class]="renk()">
+    Merhaba
+</div>
+<div [class]="hata ? 'kirmizi':'mavi'">
+    Nasılsınız?
+</div>
+<div [class.kirmizi]="hata">
+    Bugün hava çok güzel.
+</div>
+<div [ngClass]="ozellikler">
+    Ardventure
+</div>
+
+
+<button class="btn btn-primary" (click)="butonaBasildi()">Test</button>
+<div class="form">
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input [(ngModel)]="email" type="text" class="form-control" id="email">
+    </div>
+    <div class="mb-3">
+        <label for="sifre" class="form-label">Password</label>
+        <input [(ngModel)]="sifre" type="text" class="form-control" id="sifre">
+    </div>
+    <div>
+        <button (click)="login()" class="btn btn-primary">Login</button>
+    </div>
+</div>
