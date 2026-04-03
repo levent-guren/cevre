@@ -11,6 +11,6 @@ export class MenuComponent {
   router = inject(Router);
 
   menuyeGit() {
-    this.router.navigate(['/kullanici', 1])
+    this.router.navigate(['/kullanici', 1]);
   }
 }

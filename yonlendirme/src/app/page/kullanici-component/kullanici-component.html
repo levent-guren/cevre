@@ -1,2 +1,27 @@
+@if(user()) {
+<table>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td>{{user()?.id}}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{user()?.name}}</td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td>{{user()?.username}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{user()?.email}}</td>
+        </tr>
+    </tbody>
+</table>
+} @else {
+<div>User Not Found</div>
+}
+
 <button class="btn btn-primary me-2" (click)="onceki()">Önceki</button>
 <button class="btn btn-primary" (click)="sonraki()">Sonraki</button>
