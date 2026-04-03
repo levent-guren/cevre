@@ -1,0 +1,27 @@
+<div [style.color]="renk">Merhaba</div>
+<div [ngStyle]="ozellikler">Nasılsın</div>
+<div [style.color]="hata ? 'red': 'green'">Mesaj</div>
+<form>
+    <input #isim />
+    <input type="button" (click)="test(isim.value)" value="Test" />
+</form>
+@for (isim of isimler; track $index;
+let sira = $index;
+let toplam= $count;
+let ilk = $first;
+let son = $last;
+let cift = $even;
+let tek = $odd) {
+<div>ilk:{{ilk}} son: {{son}} tek:{{tek}} cift:{{cift}} {{sira+1}}/{{toplam}} - {{isim}}</div>
+}
+@switch (isimler.length) {
+@case (0) {
+Dizide hiç eleman yok
+}
+@case (1) {
+Dizide bir eleman var
+}
+@default {
+Dizide 1'den fazla isim vardır
+}
+}

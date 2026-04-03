@@ -1,0 +1,17 @@
+<div class="form">
+    <form [formGroup]="aramaForm">
+        <div class="mb-3">
+            <label for="sicil" class="form-label">Sicil</label>
+            <input formControlName="id" type="text" class="form-control" id="sicil" />
+        </div>
+        <div class="mb-3">
+            <label for="adi" class="form-label">Adı</label>
+            <input formControlName="adi" type="text" class="form-control" id="adi" />
+        </div>
+        <div class="mb-3">
+            <label for="soyadi" class="form-label">Soyadı</label>
+            <input formControlName="soyadi" type="text" class="form-control" id="soyadi" />
+        </div>
+        <button type="button" class="btn btn-primary" (click)="aramaYap()">Ara</button>
+    </form>
+</div>

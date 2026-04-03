@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sicil</th>
+            <th>Adı</th>
+            <th>Soyadı</th>
+            <th>Resim</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (p of personeller(); track p.id) {
+        <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.adi}}</td>
+            <td>{{p.soyadi}}</td>
+            <td></td>
+        </tr>
+        }
+    </tbody>
+</table>
