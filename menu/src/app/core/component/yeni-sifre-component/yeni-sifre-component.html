@@ -1,0 +1,19 @@
+<div class="">
+    Form hataları: {{ form.errors | json}}
+    - şifre hatası: {{ form.get('sifre')!.errors | json}}
+    <form [formGroup]="form">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Yeni Şifre</td>
+                    <td><input type="text" formControlName="sifre" /></td>
+                </tr>
+                <tr>
+                    <td>Tekrar Yeni Şifre</td>
+                    <td><input formControlName="yeniSifre" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<button [disabled]="!form.valid" type="button">Şifre Değiştir</button>
