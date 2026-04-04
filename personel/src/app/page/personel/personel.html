@@ -1,2 +1,2 @@
-<app-personel-arama (ara)="aramaYap($event)"></app-personel-arama>
-<app-personel-liste [personeller]="personelListesi()"></app-personel-liste>
+<app-personel-arama (ara)="aramaYap($event)" [temizle]="aramaEvent()"></app-personel-arama>
+<app-personel-liste [personeller]="personelListesi()" (temizleEvent)="kriterTemizle()"></app-personel-liste>

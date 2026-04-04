@@ -9,7 +9,7 @@ export class PersonelService {
   http = inject(HttpClient);
 
   getPersoneller(kriter: any) {
-    return this.http.post<PersonelModel[]>('http://localhost:8080/query', kriter);
+    return this.http.post<PersonelModel[]>('/query', kriter);
   }
 }
 

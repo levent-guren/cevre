@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, inject, output, Output } from '@angular/core';
+import { Component, effect, EventEmitter, inject, input, output, Output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -12,6 +12,7 @@ export class PersonelArama {
   //@Output()
   //ara = new EventEmitter();
   ara = output<any>();
+  temizle = input<boolean>();
 
   private fb = inject(FormBuilder);
   aramaForm = this.fb.group({
@@ -19,6 +20,13 @@ export class PersonelArama {
     adi: '',
     soyadi: '',
   });
+
+  constructor() {
+    effect(() => {
+      this.temizle();
+      this.aramaForm.reset();
+    });
+  }
   aramaYap() {
     let id = this.aramaForm.get('id')?.value;
     let adi = this.aramaForm.get('adi')?.value;

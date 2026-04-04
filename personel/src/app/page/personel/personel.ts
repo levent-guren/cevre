@@ -12,6 +12,8 @@ import { PersonelModel } from '../../shared/model/personel';
 })
 export class Personel {
   personelListesi = signal<PersonelModel[]>([]);
+  aramaEvent = signal<boolean>(false);
+
   personelService = inject(PersonelService);
 
   aramaYap(value: any) {
@@ -22,5 +24,10 @@ export class Personel {
         this.personelListesi.set(sonuc);
       }
     });
+  }
+  kriterTemizle() {
+    this.personelListesi.set([]);
+    //this.aramaEvent.set(!this.aramaEvent());
+    this.aramaEvent.update((v) => !v);
   }
 }
